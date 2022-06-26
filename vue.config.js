@@ -22,6 +22,7 @@ module.exports = {
         new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: 'static/Assets' }]),
         new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty'), to: 'static/ThirdParty' }]),
         new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'static/Widgets' }])
+        // new CopyWebpackPlugin([{ from: path.join('./static', 'models'), to: 'model3D' }])
       ]
     } else {
       plugins = [
@@ -59,6 +60,10 @@ module.exports = {
             include: path.resolve(__dirname, 'node_modules/cesium/Source'),
             use: { loader: require.resolve('@open-wc/webpack-import-meta-loader') }
           }
+          // {
+          //   test: /\.(glb)$/,
+          //   loader: 'url-loader'
+          // }
         ]
       },
       optimization: {
@@ -72,7 +77,7 @@ module.exports = {
               test: /[\\/]node_modules[\\/]/,
               priority: -10,
               chunks: 'all',
-              name (module) {
+              name(module) {
                 const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]
                 return `npm.${packageName.replace('@', '')}`
               }
@@ -94,7 +99,8 @@ module.exports = {
       },
       resolve: {
         alias: {
-          '@': path.resolve('src')
+          '@': path.resolve('src'),
+          '@images': path.resolve('src/assets/Apps/Sandcastle/images')
         }
       },
       node: {
