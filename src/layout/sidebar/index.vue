@@ -5,7 +5,7 @@
         <Expand />
       </el-icon>
     </div>
-    <el-menu style="height: calc(100% - 30px)" active-text-color="#ffd04b" :collapse="isCollapse"
+    <el-menu style="height: calc(100% - 30px);overflow: auto;" active-text-color="#ffd04b" :collapse="isCollapse"
       background-color="rgb(32, 34, 42)" class="el-menu-vertical-demo" text-color="#fff" @open="handleOpen"
       @close="handleClose">
       <sidebar-item :menu="menu" :isCollapse="isCollapse" :init-tag-value="defalutTagValue" :props="{

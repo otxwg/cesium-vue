@@ -21,11 +21,14 @@ const dir = ['/Beginner', '/3D Tiles', '/3DTiles Next', '/CZML', '/Datasources',
 
 //webpack的方法可以获取某一文件夹views下以.vue结尾的文件，第二个参数表示是否包含views内部文件夹里的文件
 const components = importAll(require.context('@/views', true, /\.vue$/))
+console.log(components, 'components')
 let children = []
 
 for (let item in components) {
+  // debugger
   let paths = components[item].__file.split('/')
-  children.push({ path: `/${item}`, name: `${item}`, component: components[item], parent: `/${paths[2]}` })
+  let fileName = paths[paths.length - 1].substring(0, paths[paths.length - 1].length - 4)
+  children.push({ path: `/${item}`, name: `${fileName}`, component: components[item], parent: `/${paths[2]}` })
 }
 
 let customRoute = []

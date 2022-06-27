@@ -44,6 +44,7 @@
 
   .main {
     flex: 1;
+    position: relative;
 
   }
 

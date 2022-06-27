@@ -13,10 +13,16 @@ import ArcGISTiledElevationTerrainProvider from '../views/Beginner/ArcGISTiledEl
 import Billboard from '../views/Beginner/Billboard.vue'
 import CallbackProperty from '../views/Beginner/CallbackProperty.vue'
 import cardboard from '../views/Beginner/cardboard.vue'
-debugger
-import CustomRoutes from './autorouter'
-console.log(CustomRoutes, 'CustomRoutes')
 
+import importAll from './autorouter'
+console.log(importAll, 'importAll')
+let children = []
+
+for (let item in importAll) {
+  // Vue.use(importAll[item])
+  if (item !== 'Login') children.push({ path: `/${item}`, component: importAll[item] })
+}
+console.log(children, 'children')
 export const routes = [
   {
     path: '/',
