@@ -211,7 +211,7 @@
                 const scene = viewer.scene;
                 const particleSystem = scene.primitives.add(
                     new Cesium.ParticleSystem({
-                        image: require("/Apps/SampleData/smoke.png"),
+                        image: require("./images/smoke.png"),
 
                         startColor: Cesium.Color.LIGHTSEAGREEN.withAlpha(0.7),
                         endColor: Cesium.Color.WHITE.withAlpha(0.0),
