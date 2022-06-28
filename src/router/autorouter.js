@@ -17,7 +17,7 @@ function getfilename(filename) {
   return filenameword[0]
 }
 
-const dir = ['/Beginner', '/3D Tiles', '/3DTiles Next', '/CZML', '/Datasources', '/Development', '/Geometries', '/ion Assets', '/Post Processing']
+const dir = ['/Beginner', '/3DTiles', '/3DTilesNext', '/CZML', '/Datasources', '/Development', '/Geometries', '/ionAssets', '/PostProcessing']
 
 //webpack的方法可以获取某一文件夹views下以.vue结尾的文件，第二个参数表示是否包含views内部文件夹里的文件
 const components = importAll(require.context('@/views', true, /\.vue$/))
