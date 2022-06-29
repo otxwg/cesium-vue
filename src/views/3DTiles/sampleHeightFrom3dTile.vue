@@ -1,5 +1,7 @@
 <template>
-    <div id='sampleHeightFrom3dTile'></div>
+    <div id='sampleHeightFrom3dTile'>
+        <div id='toolbar'></div>
+    </div>
 </template>
 
 <script>
